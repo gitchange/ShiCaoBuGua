@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { recordsPlugin } from './server/recordsPlugin.js';
 
 export default defineConfig({
+  base: './',
   plugins: [
     react(),
     tailwindcss(),
