@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "蓍草卜卦・解卦草稿",
+  "version": "1.0.1",
+  "description": "從本機卜卦結果或歷史紀錄開啟 ChatGPT、Gemini 並填入解卦草稿，由你確認後送出。",
+  "permissions": ["storage"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["http://127.0.0.1/*", "http://localhost/*"],
+      "js": ["source.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://chatgpt.com/*", "https://gemini.google.com/*"],
+      "js": ["composer.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

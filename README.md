@@ -49,6 +49,15 @@ docker compose up -d --build --wait
 
 卜卦紀錄的 JSON 與 Markdown 存在名為 `records` 的 Compose volume，掛載於容器的 `/app/records`。執行 `docker compose down` 可停止服務並保留紀錄，再次啟動即可調閱。
 
+### 選用 Chrome 擴充功能，預填解卦草稿
+
+1. 在桌面 Chrome 開啟 `chrome://extensions`，開啟「開發人員模式」。
+2. 點「載入未封裝項目」，選擇專案中的 [chrome-extension](chrome-extension/) 資料夾（內含 `manifest.json`）。
+3. 重新整理本機卜卦網站（`http://127.0.0.1` 或 `http://localhost`）。在成卦結果或歷史紀錄詳情按「預填並開啟 ChatGPT」或「預填並開啟 Gemini」。
+4. 在新分頁確認或編輯草稿，再自行送出。若需登入，請在同一分頁完成登入。草稿可在五分鐘內領取。若輸入框已有文字或網站介面改版，可以回到卜卦分頁點「手動複製提示詞」。
+
+擴充功能使用 Chrome 的工作階段儲存區，依新分頁編號暫存提示詞，領取或關閉分頁後清除。未安裝或停用時，網站沿用「複製並開啟」。更新擴充功能檔案後，請在擴充功能管理頁按「重新載入」，再重新整理卜卦網站。
+
 ### 1. 環境需求
 - **Node.js** ≥ 18（建議 Node 20+）
 - **npm** ≥ 9

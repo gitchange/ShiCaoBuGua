@@ -1,5 +1,9 @@
 services:
   web:
+    deploy:
+      resources:
+        limits:
+          memory: 256M
     build: .
     ports:
       - "127.0.0.1:${SHICAO_PORT:-5173}:5173"

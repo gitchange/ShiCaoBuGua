@@ -9,3 +9,5 @@
 !src/**
 !tests/
 !tests/**
+!chrome-extension/
+!chrome-extension/**
